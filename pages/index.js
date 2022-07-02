@@ -1,3 +1,4 @@
+import Link from 'next/link'
 import Jobs from 'components/Jobs'
 import prisma from 'lib/prisma'
 import { getJobs, getUser } from 'lib/data.js'
@@ -34,11 +35,13 @@ export default function Home({ jobs, user }) {
           </p>
           {user.company ? (
           <>
-          <button
-          className='border px-8 py-2 mt-5 font-bold rounded-full bg-black text-white border-black '
-        >
-          click here to post a new job
-        </button>
+          <Link href={`/new`}>
+	          <button
+	            className='border px-8 py-2 mt-5 font-bold rounded-full bg-black text-white border-black '
+	          >
+	            click here to post a new job
+	          </button>
+          </Link>
         <button
           className='ml-5 border px-8 py-2 mt-5 font-bold rounded-full bg-black text-white border-black '
         >
